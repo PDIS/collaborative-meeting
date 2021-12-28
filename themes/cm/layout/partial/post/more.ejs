@@ -1,22 +1,23 @@
-<% if(page.blogs){%>
-    <section id="picture">
-        <div class="container">   
-        <%page.blogs.forEach(d => {%>
-            <div class="row">
-                <div class="col-5">
-                    <div class="img-169" style="background: url('<%- d["image"] %>')"></div>
-                </div>
-                <div class="col-7 d-flex justify-content-between flex-column">
-                    <div>
-                        <h3><%- d["title"] %></h3>
-                        <p><%- d["subtitle"] %></p>
-                    </div>
-                    <div>
-                        <p><%- d["date"] %> | <%- d["authors"] %></p>
-                    </div>
-                </div>  
+<% if(page.blogs) { %>
+<section id="more">
+  <div class="container">
+    <div class="mb-3">
+        <h2>相關文章</h2>
+    </div>
+    <div class="row">
+      <% page.blogs.forEach(d => {%>
+        <div class="col-md-6">
+            <div class="card blog" onclick="location.href='<%- d.link %>'">
+                <div class="image-16-9" style="background: url('<%- d["image"] %>')"></div>
+              <div class="card-body">
+                <h3 class="card-title fs-5"><%- d["title"] %></h5>
+                <p class="card-text"><%- d["subtitle"] %></p>
+                <p class="card-text"><%- d["date"] %> | <%- d["authors"] %></p>
+              </div>
             </div>
-        <%})%>    
-        </div>
-    </section>
-<%}%>
+          </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<% } %>
