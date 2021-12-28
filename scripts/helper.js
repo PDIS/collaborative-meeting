@@ -91,7 +91,40 @@ function update_post() {
   });
 }
 
-hexo.extend.filter.register("before_post_render", function (data) {
+const request = require("request-promise");
+const cheerio = require("cheerio");
+async function req(link) {
+  let head = await request(link);
+  const $ = cheerio.load(head);
+
+  let image = $('meta[property="og:image"]').attr("content");
+  let title = $('meta[property="og:title"]').attr("content");
+  let subtitle = $('meta[name="description"]').attr("content");
+  let date = $(".post-header").find("time").text().replace(/\s/g, "");
+  let authors = $('meta[name="author"]').attr("content");
+
+  return { link, image, title, subtitle, date, authors };
+}
+
+hexo.extend.filter.register("before_post_render", async function (data) {
+  if (data.blogs) {
+    let d = [];
+    for (const i of data.blogs) {
+      if (i.toString().startsWith("http")) {
+        let obj = await req(i);
+        d.push(obj);
+      }
+    }
+
+    data.blogs = d;
+  }
+
+  data = bf_post_render(data);
+
+  return data;
+});
+
+function bf_post_render(data) {
   let html_path = data.path.split("/");
 
   // Set lang
@@ -119,10 +152,10 @@ hexo.extend.filter.register("before_post_render", function (data) {
   } else {
     html_path[html_path.length - 1] = filename.replace(/.html$/, "");
   }
-  data.path = html_path.join("/") + "/";
 
-  return data;
-});
+  data.path = html_path.join("/") + "/";
+  // console.log(data.path);
+}
 
 hexo.extend.filter.register("before_generate", function () {
   structured_data();
