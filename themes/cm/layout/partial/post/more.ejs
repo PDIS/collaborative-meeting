@@ -1,0 +1,22 @@
+<% if(page.blogs){%>
+    <section id="picture">
+        <div class="container">   
+        <%page.blogs.forEach(d => {%>
+            <div class="row">
+                <div class="col-5">
+                    <div class="img-169" style="background: url('<%- d["image"] %>')"></div>
+                </div>
+                <div class="col-7 d-flex justify-content-between flex-column">
+                    <div>
+                        <h3><%- d["title"] %></h3>
+                        <p><%- d["subtitle"] %></p>
+                    </div>
+                    <div>
+                        <p><%- d["date"] %> | <%- d["authors"] %></p>
+                    </div>
+                </div>  
+            </div>
+        <%})%>    
+        </div>
+    </section>
+<%}%>
