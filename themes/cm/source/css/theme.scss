@@ -13,6 +13,7 @@ header {
   .navbar {
     .nav-link {
       color: white !important;
+      text-decoration: unset;
     }
   }
 }
@@ -81,9 +82,11 @@ header {
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
     transform: scale(1.01);
   }
+
   .row {
     min-height: 10rem;
   }
+
   .image {
     width: 100%;
     padding-bottom: 56.25%;
@@ -155,12 +158,18 @@ header {
   background-position: center !important;
 }
 
-.navbar-toggler {
-  background-color: rgba(255,255,255,0.2);
+.navbar-nav {
+  grid-template-columns: unset;
 }
 
-.navbar-collapse.collapsing, .navbar-collapse.collapse.show {
-  background-color: rgba(255,255,255,0.2);
+.navbar-toggler {
+  background-color: unset;
+}
+
+.navbar-collapse.collapsing,
+.navbar-collapse.collapse.show {
+  background-color: var(--bs-primary);
+  border: 1px solid white;
 }
 
 footer {
@@ -194,8 +203,13 @@ footer {
 
 .blog {
   cursor: pointer;
+
   &:hover {
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
     transform: scale(1.01);
   }
+}
+
+a:active {
+  background-color: unset;
 }
