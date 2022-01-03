@@ -5,6 +5,12 @@
       <div class="col-md-6">
         <h2 class="mb-3"><%- _("post.introduction.title") %></h2>
         <p><%- page.introduction.content %></p>
+        <div>
+          <% array(page.tags).forEach(d => { d=find_tag(d); if (d!=null) {
+          %>
+          <a class="badge bg-green text-white mt-1" href="/list/?tag=<%- d.id %>"><%- d.name %></a>
+          <% }}) %>
+        </div>
       </div>
       <div class="col-md-5 d-flex flex-column justify-content-between align-items-end">
         <div>

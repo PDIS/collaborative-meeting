@@ -34,10 +34,10 @@
             <div>
               <% array(post.tags).forEach(d => { d=find_tag(d); if (d!=null) {
               %>
-              <a class="badge bg-secondary-light text-dark mt-1" href="/list/?tag=<%- d.id %>"><%- d.name %></a>
+              <a class="badge bg-green text-white mt-1" href="/list/?tag=<%- d.id %>"><%- d.name %></a>
               <% }}) %> <% array(post.depts).forEach(d => {
               d=find_dept(d); if (d!=null) { %>
-              <a class="badge bg-primary-light text-dark mt-1" href="/list/?dept=<%- d.id %>"><%- d.name %></a>
+              <a class="badge bg-yellow text-white mt-1" href="/list/?dept=<%- d.id %>"><%- d.name %></a>
               <% }}) %>
             </div>
             <% } %>

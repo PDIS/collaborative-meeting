@@ -79,8 +79,8 @@ header {
   text-align: left;
 
   &:hover {
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
-    transform: scale(1.01);
+    //box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    transform: scale(1.05);
   }
 
   .row {
@@ -109,28 +109,12 @@ header {
 
 }
 
-/*
 .badge {
-  font-size: 0.875rem;
-  color: white !important;
-  padding: 0.3rem 1rem;
-  margin-right: 0.3rem;
   text-decoration: none;
-
   &:hover {
-    filter: contrast(1.5);
-    transform: scale(1.1);
-    font-weight: bold;
+    transform: scale(1.05);
   }
-
-  &.badge-dept {
-    background-color: var(--bs-yellow);
-  }
-
-  &.badge-tag {
-    background-color: var(--bs-green);
-  }
-}*/
+}
 
 .depts {
   display: inline-flex;
@@ -203,10 +187,10 @@ footer {
 
 .blog {
   cursor: pointer;
-
+  margin-bottom: 1rem;
   &:hover {
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
-    transform: scale(1.01);
+    //box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    transform: scale(1.05);
   }
 }
 

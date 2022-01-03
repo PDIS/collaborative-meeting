@@ -5,7 +5,7 @@
       <h2><%- _(`post.join.${page.join.type}.title`) %></h2>
       <span><%- _(`post.join.${page.join.type}.content`) %>：<a target="_blank" href="<%- page.join.link %>"><%- page.join.title %></a></span>
     </div>
-    <img src="<%- url_for(page.join.image) %>" class="w-100" />
+    <a target="_blank" href="<%- page.join.link %>"><img src="<%- url_for(page.join.image) %>" class="w-100" /></a>
   </div>
 </section>
 <% } %>
