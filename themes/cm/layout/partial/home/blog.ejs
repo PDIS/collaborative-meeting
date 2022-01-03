@@ -1,12 +1,20 @@
+<div class="container mb-5">
+  <div class="divider d-flex align-items-center flex-wrap">
+    <div class="square bg-beige"></div>
+    <div class="triangle"></div>
+    <div class="rhombus bg-blue"></div>
+    <div class="circle bg-red"></div>
+  </div>
+</div>
 <section id="introduction">
   <div class="container">
-    <h2>協作會議相關文章</h2>
+    <h2 class="text-center">協作會議相關文章</h2>
     <p>協作會議不定期在媒體專欄或官網上會更新許多文章。其中節錄參與的心得或是實行開放政府的經驗或挑戰，一起來看看更多關於協作會議的故事吧！</p>
     <div class="row">
       <% site.pages.filter(p => String(p.blog_selected).toLowerCase() == "true").forEach(page => { page.blogs.forEach(d => {%>
       <div class="col-md-6">
         <div class="card blog" onclick="location.href='<%- d.link %>'">
-          <div class="image-16-9" style="background: url('<%- d["image"] %>')"></div>
+          <div class="image-16-9 card-img-top" style="background: url('<%- d["image"] %>')"></div>
           <div class="card-body">
             <h3 class="card-title fs-5"><%- d["title"] %></h5>
               <p class="card-text"><%- d["subtitle"] %></p>

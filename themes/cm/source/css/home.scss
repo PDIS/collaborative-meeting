@@ -5,6 +5,7 @@ main[class="home"] {
 
   section {
     margin-bottom: 5rem;
+    
   }
 
   section[id="cover"] {
@@ -15,7 +16,9 @@ main[class="home"] {
     justify-content: center;
     align-items: center;
     margin-bottom: 20vh;
-
+    @media (max-width: 992px) { 
+      margin-bottom: 10vh;
+    }
     h1 {
       font-size: 4rem;
       font-weight: bold;
@@ -81,17 +84,8 @@ main[class="home"] {
 
       @media (min-width: 992px) {
         margin-bottom: 200px;
-        height: 700px;
-
         .cover {
-          height: 100%;
           position: relative;
-
-          img {
-            position: absolute;
-            height: 100%;
-            right: 0;
-          }
 
           .triangle {
             z-index: 10;
@@ -100,7 +94,7 @@ main[class="home"] {
             height: 0;
             border-style: solid;
             border-width: 500px 250px 0 250px;
-            left: -12rem;
+            left: 8rem;
             top: -6rem;
             opacity: 0.9;
             border-color: var(--bs-yellow) transparent transparent transparent;
@@ -132,13 +126,7 @@ main[class="home"] {
         height: 800px;
 
         .cover {
-          height: 100%;
           position: relative;
-
-          img {
-            position: absolute;
-            height: 100%;
-          }
 
           .circle {
             z-index: 10;
@@ -148,8 +136,8 @@ main[class="home"] {
             border-radius: 100%;
             background-color: var(--bs-green);
             opacity: 0.9;
-            bottom: -15rem;
-            left: 8rem;
+            bottom: -11rem;
+            left: 5rem;
           }
         }
 
@@ -178,17 +166,9 @@ main[class="home"] {
 
       @media (min-width: 992px) {
         margin-bottom: 200px;
-        height: 700px;
 
         .cover {
-          height: 100%;
           position: relative;
-
-          img {
-            position: absolute;
-            height: 100%;
-            right: 50px;
-          }
 
           .square {
             z-index: 10;
@@ -201,6 +181,10 @@ main[class="home"] {
             right: 12rem;
             transform: rotate(45deg);
           }
+        }
+
+        .text {
+          padding: 3rem;
         }
       }
     }
@@ -352,4 +336,38 @@ main[class="home"] {
       }
     }
   }
+}
+
+.divider {
+  > div {
+    margin: 1rem;
+  }
+  .circle {
+    width: 85px;
+    height: 85px;
+    border-radius: 100%;
+  }
+
+  .square {
+    width: 85px;
+    height: 85px;
+  }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    border: 42.5px solid transparent;
+    border-top: 0;
+    border-bottom: 85px solid var(--bs-yellow);
+  }
+
+  .rhombus {
+    width: 60px;
+    height: 60px;
+    margin: 2rem;
+    transform: rotate(45deg);
+  }
+
+  
+
 }

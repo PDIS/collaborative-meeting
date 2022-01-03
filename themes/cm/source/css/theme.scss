@@ -111,6 +111,8 @@ header {
 
 .badge {
   text-decoration: none;
+  margin: 0 0.25rem 0 0;
+
   &:hover {
     transform: scale(1.05);
   }
@@ -188,6 +190,7 @@ footer {
 .blog {
   cursor: pointer;
   margin-bottom: 1rem;
+
   &:hover {
     //box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
     transform: scale(1.05);
@@ -196,4 +199,21 @@ footer {
 
 a:active {
   background-color: unset;
+}
+
+@media (max-width: 992px) {
+
+  .container,
+  .container-fluid,
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    width: 100%;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }

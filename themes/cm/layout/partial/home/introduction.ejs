@@ -1,11 +1,11 @@
 <section id="introduction">
-  <div class="container">
+  <div class="container-lg">
     <div class="row part1">
-      <div class="col-lg-6 cover">
+      <div class="col-lg-7 cover">
         <div class="triangle"></div>
-        <img src="<%- page.introduction.part1.image %>" />
+        <img class="w-100" src="<%- page.introduction.part1.image %>" />
       </div>
-      <div class="col-lg-6 d-flex align-items-center text">
+      <div class="col-lg-5 d-flex align-items-center text">
         <div>
           <h2><%- page.introduction.title %></h2>
           <h3><%- page.introduction.part1.title %></h3>
@@ -16,13 +16,13 @@
     <div class="row part2">
       <div class="col-lg-6 cover">
         <div class="circle"></div>
-        <img src="<%- page.introduction.part2.image %>" />
+        <img class="w-100" src="<%- page.introduction.part2.image %>" />
       </div>
       <div class="col-lg-6 d-flex align-items-center text">
         <div class="text-center">
           <h3><%- page.introduction.part2.title %></h3>
           <img
-            class="content-image"
+            class="content-image mt-3 mb-3"
             src="<%- page.introduction.part2.content_image %>"
           />
           <p class="text-start"><%- page.introduction.part2.content %></p>
@@ -30,16 +30,24 @@
       </div>
     </div>
     <div class="row part3">
-      <div class="col-lg-6 cover">
+      <div class="col-lg-7 cover">
         <div class="square"></div>
-        <img src="<%- page.introduction.part3.image %>" />
+        <img class="w-100" src="<%- page.introduction.part3.image %>" />
       </div>
-      <div class="col-lg-6 d-flex align-items-center">
+      <div class="col-lg-5 d-flex align-items-center text">
         <div>
           <h3><%- page.introduction.part3.title %></h3>
           <p><%- page.introduction.part3.content %></p>
         </div>
       </div>
     </div>
+    
   </div>
 </section>
+<div class="container mb-5">
+  <div class="divider d-flex justify-content-center flex-wrap">
+    <div class="circle bg-green"></div>
+    <div class="square bg-beige"></div>
+    <div class="triangle"></div>
+  </div>
+</div>
