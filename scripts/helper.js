@@ -209,6 +209,9 @@ hexo.extend.helper.register("embed_link", function (link, options = {}) {
       id = url.pathname.split("/")[3];
       user = url.pathname.split("/")[1];
       link = `https://e.issuu.com/embed.html?pageLayout=singlePage&hideIssuuLogo=true&u=${user}&d=${id}`;
+    } else if (link.includes("https://miro.com/app/board/")) {
+      id = url.pathname.split("/")[3];
+      link = `https://miro.com/app/live-embed/${id}/?embedAutoplay=true`;
     }
     return link;
   } catch (e) {
