@@ -30,7 +30,7 @@
 
             <p class="card-text"><%- post.description %></p>
 
-            <% if (array(post.tags).length != 0 || array(post.departments).length != 0 ) { %>
+            <% if (array(post.tags).length != 0 || array(post.depts).length != 0 ) { %>
             <div>
               <% array(post.tags).forEach(d => { d=find_tag(d); if (d!=null) {
               %>
