@@ -15,8 +15,8 @@
 
   async function get_metadata() {
     await fetch("/json/cases.json", {
-      method: "get",
-    })
+        method: "get",
+      })
       .then((response) => response.json())
       .then((data) => (metadata = data));
   }
@@ -43,20 +43,24 @@
   }
 
   function click_tag(e) {
-    var c = e.dataset.active;
-    getel('.tag').forEach((i) => {
-      i.dataset.active = "false";
-    });
-    e.dataset.active = !(c === "true");
+    getel('.dept').forEach(
+      (e) => e.dataset.active = "false"
+    );
+    getel('.tag').forEach(
+      (e) => e.dataset.active = "false"
+    );
+    e.dataset.active = "true";
     reload_list();
   }
 
   function click_dept(e) {
-    var c = e.dataset.active;
-    getel('.dept').forEach((i) => {
-      i.dataset.active = "false";
-    });
-    e.dataset.active = !(c === "true");
+    getel('.dept').forEach(
+      (e) => e.dataset.active = "false"
+    );
+    getel('.tag').forEach(
+      (e) => e.dataset.active = "false"
+    );
+    e.dataset.active = "true";
     reload_list();
   }
 
@@ -67,38 +71,42 @@
     );
 
     count("tag", filter_metadata);
-    
+
     const tag_active = getel('.tag[data-active="true"]').map(
       (e) => e.dataset.id
     );
-    filter_metadata = filter_metadata.filter((p) =>
-      tag_active.length == 0 ? true : tag_active.some((i) => p.tags.includes(i))
-    );
+
 
     count("dept", filter_metadata);
-    
+
     const dept_active = getel('.dept[data-active="true"]').map(
       (e) => e.dataset.id
     );
-    filter_metadata = filter_metadata.filter((p) =>
-      dept_active.length == 0
-        ? true
-        : dept_active.some((i) => p.depts.includes(i))
-    );
+
+    if (!(tag_active.includes("all") || dept_active.includes("all"))) {
+      filter_metadata = filter_metadata.filter((p) =>
+        tag_active.length == 0 ? true : tag_active.some((i) => p.tags.includes(i))
+      );
+      filter_metadata = filter_metadata.filter((p) =>
+        dept_active.length == 0 ?
+        true :
+        dept_active.some((i) => p.depts.includes(i))
+      );
+    }
 
     document.getElementById("result-count").innerHTML = filter_metadata.length;
 
     getel(".case")
       .sort((a, b) =>
-        document.getElementById("select-sort").value == "asc"
-          ? a.dataset.id - b.dataset.id
-          : b.dataset.id - a.dataset.id
+        document.getElementById("select-sort").value == "asc" ?
+        a.dataset.id - b.dataset.id :
+        b.dataset.id - a.dataset.id
       )
       .forEach((el) => {
         el.dataset.visible = "false";
         el.parentNode.appendChild(el);
       });
-    
+
     filter_metadata.forEach((p) => {
       getel(`.case[data-id="${p.id}"]`).find(
         (el) => (el.dataset.visible = "true")
@@ -108,8 +116,8 @@
     // Rewrite URL
     var result = [];
     if (search != "") result.push("search=" + encodeURIComponent(search));
-    if (getel('.dept[data-active="true"]').length > 0) result.push("dept=" + getel('.dept[data-active="true"]')[0].dataset.id );
-    if (getel('.tag[data-active="true"]').length > 0) result.push("tag=" + getel('.tag[data-active="true"]')[0].dataset.id );
+    if (getel('.dept[data-active="true"]').length > 0) result.push("dept=" + getel('.dept[data-active="true"]')[0].dataset.id);
+    if (getel('.tag[data-active="true"]').length > 0) result.push("tag=" + getel('.tag[data-active="true"]')[0].dataset.id);
     history.replaceState({}, "", "?" + result.join("&"));
   }
 
@@ -120,18 +128,23 @@
       .flat()
       .forEach((x) => (count[x] = (count[x] || 0) + 1));
     getel(`.${name}`).forEach((el) => {
-      const num = count[el.dataset.id] == undefined ? 0 : count[el.dataset.id];
+      let num = count[el.dataset.id] == undefined ? 0 : count[el.dataset.id];
+      if (el.dataset.id == "all") {
+        num = filter_metadata.length;
+      }
       el.innerHTML = `${el.dataset.name} (${num})`;
       if (el.dataset.img != undefined)
         el.innerHTML = `<img src="${el.dataset.img}">${el.innerHTML}`;
       el.dataset.count = num;
     });
-    
+
     getel(`.${name}`)
       .sort((a, b) =>
-        b.dataset.count.localeCompare(a.dataset.count, "en", { numeric: true })
+        b.dataset.count.localeCompare(a.dataset.count, "en", {
+          numeric: true
+        })
       )
       .forEach((el) => el.parentNode.appendChild(el));
-      
+
   }
 </script>

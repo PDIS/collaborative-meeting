@@ -23,6 +23,7 @@
       <div class="col-lg-10">
         <div class="collapse" id="collapseTag">
           <div class="filter-items">
+            <div class="filter-item tag" data-id="all" data-name="全部" data-active="false" onclick="click_tag(this)"></div>
             <% site.data.tags.forEach(tag => { %>
             <div class="filter-item tag" data-id="<%- tag.id %>" data-name="<%- tag[page.lang].name %>" data-active="false" onclick="click_tag(this)"></div>
             <% }) %>
@@ -38,6 +39,7 @@
       <div class="col-lg-10">
         <div class="collapse" id="collapseDept">
           <div class="filter-items">
+            <div class="filter-item dept" data-id="all" data-name="全部" data-active="false" onclick="click_tag(this)"></div>
             <% site.data.departments.filter(p => p.id != "PDIS").forEach(dept => { %>
             <div class="filter-item dept" data-id="<%- dept.id %>" data-name="<%- dept[page.lang].name %>" data-active="false" data-img="<%- url_for(dept.image) %>" onclick="click_dept(this)"></div>
             <% }) %>
