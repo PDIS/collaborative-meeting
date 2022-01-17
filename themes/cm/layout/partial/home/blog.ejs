@@ -13,7 +13,7 @@
     <div class="row">
       <% site.pages.filter(p => String(p.blog_selected).toLowerCase() == "true").forEach(page => { if (page.blogs != undefined) { d = page.blogs[0]; %>
       <div class="col-md-6">
-        <div class="card blog" onclick="location.href='<%- d.link %>'">
+        <div class="card blog" onclick="window.open('<%- d.link %>', '_blank')">
           <div class="image-16-9 card-img-top" style="background: url('<%- d["image"] %>')"></div>
           <div class="card-body">
             <h3 class="card-title fs-5"><%- d["title"] %></h5>

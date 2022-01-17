@@ -1,62 +1,61 @@
-<%if(page.pictures != null ){ %>
-    <section id="picture">
-      <div class="container">
-        <%if(page.pictures.length==1){ %>
-        <div class="row">
-          <div class="col-12">
-            <div style="background: url('<%- page.pictures[0] %>')" class="img-169"></div>
-          </div>
-        </div>
-        <% }else if(page.pictures.length==2){ %>
-        <div class="row">
-          <div class="col-6">
-            <div style="background: url('<%- page.pictures[0] %>')" class="img-169"></div>
-          </div>
-          <div class="col-6">
-            <div style="background: url('<%- page.pictures[1] %>')" class="img-169"></div>
-          </div>
-        </div>
-        <% }else if(page.pictures.length==3){ %>
-        <div class="row">
-          <div class="col-md-8">
-            <div style="background: url('<%- page.pictures[0] %>')" class="img-169"></div>
-          </div>
-          <div class="col-md-4 d-flex flex-column justify-content-between">
-            <div style="background: url('<%- page.pictures[1] %>')" class="img-169"></div>
-            <div style="background: url('<%- page.pictures[2] %>')" class="img-169"></div>
-          </div>
-        </div>
-        <% }else if(page.pictures.length==4){ %>
-        <div class="row">
-          <div class="col-12">
-            <div style="background: url('<%- page.pictures[0] %>')" class="img-169"></div>
-          </div>
-          <div class="col-md-8">
-            <div style="background: url('<%- page.pictures[1] %>')" class="img-169"></div>
-          </div>
-          <div class="col-md-4 d-flex flex-column justify-content-between">
-            <div style="background: url('<%- page.pictures[2] %>')" class="img-169"></div>
-            <div style="background: url('<%- page.pictures[3] %>')" class="img-169"></div>
-          </div>
-        </div>
-        <% }else if(page.pictures.length==5){ %>
-        <div class="row">
-          <div class="col-12">
-            <div style="background: url('<%- page.pictures[0] %>')" class="img-169"></div>
-          </div>
-          <div class="col-md-8">
-            <div style="background: url('<%- page.pictures[1] %>')" class="img-169"></div>
-          </div>
-          <div class="col-md-4 d-flex flex-column justify-content-between">
-            <div style="background: url('<%- page.pictures[2] %>')" class="img-169"></div>
-            <div style="background: url('<%- page.pictures[3] %>')" class="img-169"></div>
-          </div>
-          <div class="col-12">
-            <div style="background: url('<%- page.pictures[4] %>')" class="img-169"></div>
-          </div>
-        </div>
-        <% } %>
+<% if(page.pictures){ %>
+<section id="picture">
+  <div class="container">
+    <% if(page.pictures.length==1){ %>
+    <div class="row">
+      <div class="col-12">
+        <div style="background: url('<%- page.pictures[0] %>')" class="image-16-9"></div>
       </div>
-    </section>
+    </div>
+    <% }else if(page.pictures.length==2){ %>
+    <div class="row">
+      <div class="col-6">
+        <div style="background: url('<%- page.pictures[0] %>')" class="image-16-9"></div>
+      </div>
+      <div class="col-6">
+        <div style="background: url('<%- page.pictures[1] %>')" class="image-16-9"></div>
+      </div>
+    </div>
+    <% }else if(page.pictures.length==3){ %>
+    <div class="row">
+      <div class="col-md-8">
+        <div style="background: url('<%- page.pictures[0] %>')" class="image-16-9"></div>
+      </div>
+      <div class="col-md-4 d-flex flex-column justify-content-between">
+        <div style="background: url('<%- page.pictures[1] %>')" class="image-16-9"></div>
+        <div style="background: url('<%- page.pictures[2] %>')" class="image-16-9"></div>
+      </div>
+    </div>
+    <% }else if(page.pictures.length==4){ %>
+    <div class="row">
+      <div class="col-12">
+        <div style="background: url('<%- page.pictures[0] %>')" class="image-16-9"></div>
+      </div>
+      <div class="col-md-8">
+        <div style="background: url('<%- page.pictures[1] %>')" class="image-16-9"></div>
+      </div>
+      <div class="col-md-4 d-flex flex-column justify-content-between">
+        <div style="background: url('<%- page.pictures[2] %>')" class="image-16-9"></div>
+        <div style="background: url('<%- page.pictures[3] %>')" class="image-16-9"></div>
+      </div>
+    </div>
+    <% }else if(page.pictures.length==5){ %>
+    <div class="row">
+      <div class="col-12">
+        <div style="background: url('<%- page.pictures[0] %>')" class="image-16-9"></div>
+      </div>
+      <div class="col-md-8">
+        <div style="background: url('<%- page.pictures[1] %>')" class="image-16-9"></div>
+      </div>
+      <div class="col-md-4 d-flex flex-column justify-content-between">
+        <div style="background: url('<%- page.pictures[2] %>')" class="image-16-9"></div>
+        <div style="background: url('<%- page.pictures[3] %>')" class="image-16-9"></div>
+      </div>
+      <div class="col-12">
+        <div style="background: url('<%- page.pictures[4] %>')" class="image-16-9"></div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</section>
 <% } %>
-    
