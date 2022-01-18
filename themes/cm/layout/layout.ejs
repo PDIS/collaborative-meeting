@@ -49,11 +49,11 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="<%- theme.favicon %>">
   <%- partial('partial/ga') %>
-  <sctipt>
+  <script>
     if (window.location.hostname == "cm.pdis.tw") {
       window.location.href = window.location.href.replace("cm.pdis.tw", "cm.pdis.nat.gov.tw");
     }
-  </sctipt>
+  </script>
 </head>
 
 <body class="primary-<%= (page.color || '').toLowerCase() %>">
