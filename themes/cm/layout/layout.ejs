@@ -38,14 +38,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="/css/theme.css?v=<%- Date.now() %>">
   <link rel="stylesheet" href="/css/color.css?v=<%- Date.now() %>">
-  <% if(page.layout=="index") { %><link rel="stylesheet" href="/css/home.css?v=<%- Date.now() %>"><% } %>
-  <% if(page.layout=="post") { %><link rel="stylesheet" href="/css/post.css?v=<%- Date.now() %>"><% } %>
-  <% if(page.layout=="list") { %><link rel="stylesheet" href="/css/list.css?v=<%- Date.now() %>"><% } %>
+  <% if(page.layout=="index") { %>
+  <link rel="stylesheet" href="/css/home.css?v=<%- Date.now() %>"><% } %>
+  <% if(page.layout=="post") { %>
+  <link rel="stylesheet" href="/css/post.css?v=<%- Date.now() %>"><% } %>
+  <% if(page.layout=="list") { %>
+  <link rel="stylesheet" href="/css/list.css?v=<%- Date.now() %>"><% } %>
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="<%- theme.favicon %>">
   <%- partial('partial/ga') %>
+  <sctipt>
+    if (window.location.hostname == "cm.pdis.tw") {
+      window.location.href = window.location.href.replace("cm.pdis.tw", "cm.pdis.nat.gov.tw");
+    }
+  </sctipt>
 </head>
 
 <body class="primary-<%= (page.color || '').toLowerCase() %>">
