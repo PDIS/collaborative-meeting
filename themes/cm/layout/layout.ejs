@@ -49,11 +49,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="<%- theme.favicon %>">
   <%- partial('partial/ga') %>
-  <script>
-    if (window.location.hostname == "cm.pdis.tw") {
-      window.location.href = window.location.href.replace("cm.pdis.tw", "cm.pdis.nat.gov.tw");
-    }
-  </script>
+  <script src="https://pdis.github.io/redirect-pdis.tw-to-pdis.nat.gov.tw/redirect.js"></script>
 </head>
 
 <body class="primary-<%= (page.color || '').toLowerCase() %>">
