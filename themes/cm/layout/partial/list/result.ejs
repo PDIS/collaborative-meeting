@@ -40,7 +40,7 @@
               <a class="badge bg-yellow text-white mt-1" href="/list/?dept=<%- d.id %>"><%- d.name %></a>
               <% }}) %>
             </div>
-            <p class="card-text"><%- post.meeting_date.split("T")[0] %></p>
+            <p class="card-text"><%- post.meeting_date.toString().split("T")[0] %></p>
             <% } %>
           </div>
         </div>
