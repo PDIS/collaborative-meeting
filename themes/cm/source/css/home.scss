@@ -15,6 +15,7 @@ main[class="home"] {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     margin-bottom: 20vh;
     @media (max-width: 992px) { 
       margin-bottom: 10vh;
@@ -44,6 +45,10 @@ main[class="home"] {
       background-size: cover !important;
       background-position: center !important;
       filter: brightness(0.5);
+    }
+
+    #lottie {
+      position: absolute;
     }
   }
 
