@@ -10,8 +10,7 @@
           <span class="visually-hidden">Previous</span>
         </button>
         <div class="carousel-inner flex-grow-1">
-          <% page.achievement.cases.forEach((p, index) => { const post =
-          site.pages.filter(a => a.id == p && a.lang == page.lang).data[0]; %>
+          <% site.pages.filter(p => String(p.selected).toLowerCase() == "true").forEach((post, index) => { %>
           <div class="carousel-item <%- index == 0 ? 'active' : '' %>">
             <div class="big-card">
               <div class="row">
@@ -42,7 +41,7 @@
                       d = find_dept(d);
                       if(!d) return;
                     %>
-                      <a class="badge bg-green text-white mt-1" href="/list/?dept=<%- d.id %>"><%- d.name %></a>
+                      <a class="badge bg-yellow text-white mt-1" href="/list/?dept=<%- d.id %>"><%- d.name %></a>
                       <% }) %>
                     </div>
                   </div>
