@@ -70,7 +70,7 @@ function generate_metadata() {
         thumbnail: post.thumbnail,
         tags: tags,
         depts: depts,
-        meeting_date: post.meeting_date
+        meeting_date: post.meeting_date,
       });
     });
 }
@@ -210,7 +210,10 @@ hexo.extend.helper.register("embed_link", function (link, options = {}) {
       id = url.pathname.split("/")[3];
       user = url.pathname.split("/")[1];
       link = `https://e.issuu.com/embed.html?pageLayout=singlePage&hideIssuuLogo=true&u=${user}&d=${id}`;
-    } else if (link.includes("https://miro.com/app/board/") || link.includes("https://miro.com/app/live-embed/")) {
+    } else if (
+      link.includes("https://miro.com/app/board/") ||
+      link.includes("https://miro.com/app/live-embed/")
+    ) {
       id = url.pathname.split("/")[3];
       //link = `https://miro.com/app/live-embed/${id}/?embedAutoplay=true`;
       link = `https://miro.com/app/embed/${id}/?embedAutoplay=true`;
@@ -253,4 +256,12 @@ hexo.extend.helper.register("find_dept", function (key) {
 
 hexo.extend.helper.register("get_metadata", function () {
   return metadata;
+});
+
+hexo.extend.helper.register("date_fmt", function (date) {
+  try {
+    return new Date(date).toISOString().slice(0, 10); // YYYY-mm-dd
+  } catch (e) {
+    return date;
+  }
 });
