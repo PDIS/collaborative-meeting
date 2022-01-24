@@ -70,6 +70,7 @@ function generate_metadata() {
         thumbnail: post.thumbnail,
         tags: tags,
         depts: depts,
+        meeting_date: post.meeting_date
       });
     });
 }
