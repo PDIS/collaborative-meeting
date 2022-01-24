@@ -1,5 +1,6 @@
 const flat = require("flat");
 const fs = require("fs");
+const moment = require('moment');
 let metadata = [];
 
 function array(arr) {
@@ -259,9 +260,9 @@ hexo.extend.helper.register("get_metadata", function () {
 });
 
 hexo.extend.helper.register("date_fmt", function (date) {
-  try {
-    return new Date(date).toISOString().slice(0, 10); // YYYY-mm-dd
-  } catch (e) {
+  const d = moment(date).format('YYYY-MM-DD');
+  if (d == "Invalid date") {
     return date;
   }
+  return d;
 });
