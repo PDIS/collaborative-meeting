@@ -1,16 +1,13 @@
 <section id="result">
   <div class="container">
-    <div class="title">
-      <h2><%- page.result.title %></h2>
-      <span><%- page.result.content %>，篩選出
-        <span id="result-count">0</span> 案相關協作會議</span>
-    </div>
 
     <div class="sort">
-      <select id="select-sort" class="form-select" onchange="reload_list()">
+      <select id="select-sort" class="form-select d-inline" onchange="reload_list()">
         <option selected value="asc">由舊到新</option>
         <option value="desc">由新到舊</option>
       </select>
+      <span><%- page.result.content %>，篩選出
+        <span id="result-count">0</span> 案相關協作會議</span>
     </div>
 
     <% get_metadata().forEach(post => { %>
