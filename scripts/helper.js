@@ -203,9 +203,9 @@ hexo.extend.helper.register("embed_link", function (link, options = {}) {
       } else {
         id = url.pathname.split("/")[1];
       }
-      link = `https://www.youtube.com/embed/${id}`;
+      link = `https://www.youtube.com/embed/${id}?`;
       if (options.loop) {
-        link += `?loop=1&playlist=${id}`;
+        link += `loop=1&playlist=${id}&autoplay=1`;
       }
     } else if (url.hostname == "issuu.com") {
       id = url.pathname.split("/")[3];

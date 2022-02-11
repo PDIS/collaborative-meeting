@@ -4,7 +4,7 @@
     <p><%- page.description %></p>
     <% if (page.cover) { %>
     <div class="embed-iframe">
-      <iframe src="<%- embed_link(page.cover, {loop : true}) %>" allowFullScreen></iframe>
+      <iframe src="<%- embed_link(page.cover, {loop : true}) %>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <% } else { %>
       <div class="image-16-9 shadow-sm" style="background-image: url('<%- url_for(page.thumbnail) %>')"></div>
