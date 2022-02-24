@@ -4,7 +4,7 @@
   @debug meta.keywords($args);
   :root {
     @each $name, $color in meta.keywords($args) {
-      --bs-#{$name}: #{$color};
+      --bs-#{$name}: #{$color} !important;
     }
   }
   @each $name, $color in meta.keywords($args) {
