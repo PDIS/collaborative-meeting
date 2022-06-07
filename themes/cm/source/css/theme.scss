@@ -144,16 +144,25 @@ header {
   background-position: center !important;
 }
 
+.navbar {
+  background-color: unset;
+}
+
 .navbar-nav {
   grid-template-columns: unset;
 }
 
 .navbar-toggler {
-  background-color: unset;
+  background-color: unset !important;
+  border: 0;
 
   &:focus {
     box-shadow: unset;
   }
+}
+
+.navbar-collapse {
+  background-color: unset !important;
 }
 
 .navbar-collapse.collapsing,
