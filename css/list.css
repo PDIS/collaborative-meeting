@@ -1,0 +1,100 @@
+header .navbar .nav-link {
+  color: black !important;
+}
+
+main[class=list] .title {
+  margin-bottom: 2rem;
+}
+main[class=list] .title h2 {
+  display: inline;
+  color: var(--bs-primary);
+  font-weight: bold;
+  margin-right: 1rem;
+}
+main[class=list] section[id=filter] {
+  margin-top: 5rem;
+}
+main[class=list] section[id=filter] hr {
+  margin: 1rem 0;
+}
+main[class=list] section[id=filter] h3 {
+  margin-top: 0.8rem;
+  font-weight: bold;
+  color: var(--bs-primary);
+  font-weight: bold;
+}
+main[class=list] section[id=filter] .row {
+  margin-bottom: 1rem;
+}
+main[class=list] section[id=filter] .collapse:not(.show) {
+  display: block;
+  height: 6.8rem;
+  overflow: hidden;
+}
+main[class=list] section[id=filter] .collapse.show {
+  height: unset;
+}
+main[class=list] section[id=filter] .collapsing {
+  height: 6.8rem;
+}
+main[class=list] section[id=filter] .filter-dept h3 {
+  color: var(--bs-yellow);
+}
+main[class=list] section[id=filter] .filter-dept .filter-item {
+  line-height: 30px;
+}
+main[class=list] section[id=filter] .filter-dept .filter-item[data-active=true] {
+  color: var(--bs-yellow);
+  font-weight: bold;
+}
+main[class=list] section[id=filter] .filter-dept img {
+  height: 30px;
+  margin-right: 0.5rem;
+}
+main[class=list] section[id=filter] .filter-tag h3 {
+  color: var(--bs-green);
+}
+main[class=list] section[id=filter] .filter-tag .filter-item[data-active=true] {
+  color: var(--bs-green);
+  font-weight: bold;
+}
+main[class=list] section[id=filter] .filter-items {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+main[class=list] section[id=filter] .filter-items .filter-item {
+  border-right: 1px solid;
+  border-color: #c4c4c4;
+  font-size: 1.2rem;
+  padding: 0 1.2rem;
+  margin: 0.8rem 0;
+  color: gray;
+  cursor: pointer;
+}
+main[class=list] section[id=filter] .filter-items .filter-item:hover {
+  font-weight: bold;
+}
+main[class=list] section[id=filter] .more {
+  float: right;
+  color: var(--bs-secondary);
+}
+main[class=list] section[id=result] {
+  margin-top: 5rem;
+}
+main[class=list] section[id=result] h3 {
+  font-weight: bold;
+}
+main[class=list] section[id=result] .sort {
+  margin-bottom: 2rem;
+}
+main[class=list] section[id=result] .sort select {
+  width: auto;
+  border: 0;
+  outline: 0;
+  font-size: 1.2rem;
+}
+main[class=list] section[id=result] .sort select:active, main[class=list] section[id=result] .sort select:focus {
+  background-color: white;
+  color: black;
+}
