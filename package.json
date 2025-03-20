@@ -22,7 +22,7 @@
         "hexo-renderer-marked": "^4.0.0",
         "hexo-renderer-stylus": "^2.0.0",
         "hexo-server": "^2.0.0",
-        "moment": "^2.29.1",
+        "moment": "^2.29.4",
         "request": "^2.88.2",
         "request-promise": "^4.2.6"
     }
